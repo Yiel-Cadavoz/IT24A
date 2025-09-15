@@ -77,6 +77,20 @@
             console.log("createEditButton() called =>", taskSpan.textContent);
             return editBtn;
         }
+
+        function handleEditClick(li){
+            const currentText = li.firstChild.textContent.trim();
+            console.log("handleEditClick() -> current:",currentText,Date());
+
+            const newText = prompt("Edit your task: ", currentText);
+
+            if(newText !== null && newText.trim() !== "") {
+                li.firstChild.textContent = newText.trim();
+                console.log("handleEditClick() -> updated to: z", newText.trim(), Date());
+            } else {
+                console.log("handleEditClick() -> no changes made");
+            }
+        }
     </script>
 </body>
 </html>
